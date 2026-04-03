@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fluid Scholar - Audio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        :root.dark body { background-color: #0f172a; }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 4px; }
+        :root.dark ::-webkit-scrollbar-thumb { background-color: #334155; }
+        
+        .wave {
+            display: inline-block;
+            width: 3px;
+            height: 12px;
+            background-color: currentColor;
+            border-radius: 3px;
+            animation: wave 1s ease-in-out infinite;
+        }
+        @keyframes wave {
+            0%, 100% { transform: scaleY(0.5); }
+            50% { transform: scaleY(1); }
+        }
+        .wave:nth-child(2) { animation-delay: 0.1s; }
+        .wave:nth-child(3) { animation-delay: 0.2s; }
+        .wave:nth-child(4) { animation-delay: 0.3s; }
+        .wave:nth-child(5) { animation-delay: 0.4s; }
+    </style>
+  <script type="module" crossorigin src="/simple-erp/assets/audio-CPoLuFyL.js"></script>
+  <link rel="modulepreload" crossorigin href="/simple-erp/assets/main-B8DfoAiC.js">
+  <link rel="modulepreload" crossorigin href="/simple-erp/assets/storage-CG4rpPc8.js">
+  <link rel="stylesheet" crossorigin href="/simple-erp/assets/main-CQqjQvTT.css">
+</head>
+<body class="flex h-screen overflow-hidden text-slate-800 dark:text-slate-100 transition-colors duration-300">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-slate-50 dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between shrink-0 h-full overflow-y-auto hidden md:flex transition-colors duration-300">
+        <div>
+            <!-- Header -->
+            <div class="px-6 py-8">
+                <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white transition-colors">The Fluid Scholar</h2>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 transition-colors">Digital Atheneum</p>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="px-3 space-y-1">
+                <a href="dashboard.html" class="flex items-center px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg transition-colors">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    <span class="font-medium text-sm">Documents</span>
+                </a>
+                
+                <a href="files.html" class="flex items-center px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg transition-colors">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+                    <span class="font-medium text-sm">Files</span>
+                </a>
+
+                <a href="audio.html" class="flex items-center px-3 py-2.5 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 rounded-lg relative group transition-colors">
+                    <span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-emerald-600 dark:bg-emerald-500 rounded-r-full"></span>
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
+                    <span class="font-medium text-sm">Audio</span>
+                </a>
+
+                <a href="pdf.html" class="flex items-center px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg transition-colors">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    <span class="font-medium text-sm">PDF</span>
+                </a>
+
+                <a href="#" class="flex items-center px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg transition-colors">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    <span class="font-medium text-sm">Courses</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Bottom Action / Player -->
+        <div class="px-5 pb-6 mt-8 space-y-4">
+            <button class="w-full flex items-center justify-center space-x-2 bg-slate-900 dark:bg-emerald-500 text-white dark:text-slate-900 rounded-xl py-3 text-sm font-semibold hover:bg-slate-800 dark:hover:bg-emerald-400 transition shadow-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                <span>New Study Session</span>
+            </button>
+
+            <a href="profile.html" class="flex items-center space-x-3 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white px-2 py-2 transition text-sm font-medium">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                <span>Settings</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col h-full bg-white dark:bg-[#0f172a] rounded-tl-3xl shadow-[-10px_0_30px_rgba(0,0,0,0.02)] border-t border-l border-slate-100 dark:border-slate-800 overflow-hidden ml-0 md:-ml-4 z-10 transition-colors duration-300">
+        
+        <!-- Header -->
+        <header class="flex items-center justify-between px-8 py-5 border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-[#0f172a] z-20 transition-colors duration-300">
+            <!-- Search -->
+            <div class="relative w-full max-w-sm">
+                <svg class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <input type="text" placeholder="Search your audio lectures..." class="w-full pl-10 pr-4 py-2 bg-slate-100/70 dark:bg-slate-800/80 border-none rounded-full text-sm text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all placeholder:text-slate-400">
+            </div>
+            
+            <!-- Right Actions -->
+            <div class="flex items-center space-x-6">
+                <!-- Dark Mode Toggle -->
+                <button id="dark-mode-toggle" class="relative inline-flex h-6 w-11 items-center rounded-full bg-slate-300 transition-colors focus:outline-none shadow-sm flex-shrink-0">
+                    <span class="sr-only">Toggle dark mode</span>
+                    <span id="dark-mode-thumb" class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200 ease-in-out translate-x-1"></span>
+                </button>
+
+                <button class="text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 relative transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                    <span class="absolute top-0 right-0 w-2 h-2 bg-red-400 dark:bg-red-500 border-2 border-white dark:border-slate-900 rounded-full transition-colors"></span>
+                </button>
+                <a href="profile.html" class="flex items-center space-x-2 cursor-pointer bg-blue-50 dark:bg-slate-800 px-2 py-1.5 rounded-full border border-blue-100 dark:border-slate-700 transition hover:bg-blue-100 dark:hover:bg-slate-700">
+                    <img src="https://i.pravatar.cc/100?img=11" alt="Profile" class="w-7 h-7 rounded-full object-cover">
+                    <span class="text-sm font-semibold text-slate-800 dark:text-slate-200 tracking-tight pr-1 user-name-display transition-colors">Loading...</span>
+                    <svg class="w-4 h-4 text-slate-500 dark:text-slate-400 mr-1 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+            </div>
+        </header>
+
+        <!-- Content Scroller -->
+        <div class="flex-1 overflow-y-auto bg-[#fafbfc] dark:bg-slate-900/50 px-8 py-10 transition-colors duration-300">
+            <div class="max-w-6xl mx-auto space-y-8">
+                
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-3xl font-extrabold text-[#0f172a] dark:text-white tracking-tight transition-colors">Audio Lectures</h1>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Listen to your course recordings and audiobooks.</p>
+                    </div>
+                    <button class="flex items-center space-x-2 bg-[#0f172a] hover:bg-slate-800 dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white dark:text-slate-900 px-5 py-2.5 rounded-xl text-sm font-semibold transition shadow-sm">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                        <span>Add Audio</span>
+                    </button>
+                </div>
+
+                <!-- Upload Zone -->
+                <div id="audio-upload-zone" class="w-full border-2 border-dashed border-indigo-400/50 bg-indigo-50/50 dark:bg-indigo-900/10 dark:border-indigo-500/30 hover:border-indigo-500 dark:hover:border-indigo-400 rounded-2xl p-10 flex flex-col items-center justify-center cursor-pointer transition-all shadow-sm group mb-8">
+                    <div class="w-16 h-16 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-4 group-hover:scale-110 transition-transform shadow-inner">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Upload Audio</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 text-center max-w-sm">Drag and drop your audio files here, or <span class="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">browse</span> files.</p>
+                    <input type="file" id="audio-input" class="hidden" accept="audio/*" multiple>
+                    <p class="text-xs text-slate-400 mt-4">Supported formats: MP3, WAV, AAC (Max: 100MB)</p>
+                </div>
+
+                <!-- Main Player Area -->
+                <div class="bg-indigo-900 dark:bg-[#0f2838] rounded-3xl p-8 relative overflow-hidden shadow-lg border border-indigo-800 dark:border-[#173852] transition-colors">
+                    <div class="absolute inset-0 bg-gradient-to-r from-indigo-800/50 to-purple-900/50 dark:from-[#08151f] dark:to-[#0f2838]/80 mix-blend-overlay"></div>
+                    
+                    <div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
+                        <!-- Album Art -->
+                        <div class="w-48 h-48 rounded-2xl bg-gradient-to-br from-pink-500 to-orange-400 shadow-2xl flex-shrink-0 flex items-center justify-center">
+                            <span class="text-white/20">
+                                <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                            </span>
+                        </div>
+                        
+                        <!-- Player Controls -->
+                        <div class="flex-1 w-full text-white">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-bold tracking-widest uppercase text-indigo-300 dark:text-emerald-400 mb-1 block">Now Playing</span>
+                                <div id="music-waves" class="flex items-center space-x-1 text-indigo-300 dark:text-emerald-400 opacity-50">
+                                    <span class="wave" style="animation-play-state: paused;"></span><span class="wave" style="animation-play-state: paused;"></span><span class="wave" style="animation-play-state: paused;"></span><span class="wave" style="animation-play-state: paused;"></span><span class="wave" style="animation-play-state: paused;"></span>
+                                </div>
+                            </div>
+                            <h2 id="player-title" class="text-3xl font-extrabold mb-1 truncate">No Audio Selected</h2>
+                            <p id="player-subtitle" class="text-indigo-200 mb-8 truncate">Select an audio file below</p>
+                            
+                            <!-- Timeline -->
+                            <div class="mb-4">
+                                <div id="progress-container" class="w-full bg-white/20 rounded-full h-2 cursor-pointer overflow-hidden relative">
+                                    <div id="progress-bar" class="absolute top-0 left-0 h-full bg-white rounded-full transition-all duration-100" style="width: 0%"></div>
+                                </div>
+                                <div class="flex justify-between text-xs text-indigo-200 mt-2 font-medium">
+                                    <span id="current-time">00:00</span>
+                                    <span id="total-time">00:00</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Buttons -->
+                            <div class="flex items-center justify-center space-x-8">
+                                <button id="prev-btn" class="text-indigo-200 hover:text-white transition group"><svg class="w-6 h-6 transform group-hover:-translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path></svg></button>
+                                <button id="play-pause-btn" class="w-16 h-16 bg-white text-indigo-900 rounded-full flex items-center justify-center hover:scale-105 transition shadow-xl">
+                                    <svg id="play-icon" class="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/></svg>
+                                    <svg id="pause-icon" class="w-8 h-8 hidden" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                                </button>
+                                <button id="next-btn" class="text-indigo-200 hover:text-white transition group"><svg class="w-6 h-6 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Playlist -->
+                <div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4 transition-colors">Up Next</h3>
+                    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-slate-100 dark:border-slate-700 overflow-hidden transition-colors">
+                        <ul id="audio-list" class="divide-y divide-slate-100 dark:divide-slate-700">
+                            <!-- Empty State -->
+                            <li class="p-12 flex flex-col items-center justify-center text-slate-500 dark:text-slate-400">
+                                <svg class="w-10 h-10 text-slate-300 dark:text-slate-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
+                                <p class="text-sm font-medium">No audio files found. Upload some to listen.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Main Script -->
+</body>
+</html>
