@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { resolve } from 'path';
 
 export default defineConfig({
-  base: '/',
+  base: '/simple-erp/',
   plugins: [
     tailwindcss(),
   ],
