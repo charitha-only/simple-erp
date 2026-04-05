@@ -26,25 +26,25 @@ async function initApp() {
                 } else {
                     alert("Password updated successfully! You can now log in with the new password.");
                     await supabase.auth.signOut();
-                    window.location.href = './index.html';
+                    window.location.href = import.meta.env.BASE_URL + 'index.html';
                 }
             } else {
                 alert("Password must be at least 6 characters. Please try the recovery link again.");
                 await supabase.auth.signOut();
-                window.location.href = './index.html';
+                window.location.href = import.meta.env.BASE_URL + 'index.html';
             }
         }
     });
 
     if (!session && isProtectedPage) {
-        window.location.href = './index.html';
+        window.location.href = import.meta.env.BASE_URL + 'index.html';
         return;
     }
 
     if (session && isAuthPage) {
         // Don't redirect immediately if it's a recovery flow so onAuthStateChange can trigger
         if (!window.location.hash.includes('type=recovery')) {
-            window.location.href = './dashboard.html';
+            window.location.href = import.meta.env.BASE_URL + 'dashboard.html';
             return;
         }
     }
@@ -84,7 +84,7 @@ async function initApp() {
             btn.addEventListener('click', async (e) => {
                 e.preventDefault();
                 await supabase.auth.signOut();
-                window.location.href = './index.html';
+                window.location.href = import.meta.env.BASE_URL + 'index.html';
             });
         }
     });

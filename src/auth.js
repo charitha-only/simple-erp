@@ -397,7 +397,7 @@ loginForm.addEventListener('submit', async (e) => {
     gsap.fromTo(confetti.children, { y: 0, scale: 0 }, { y: -30, scale: 1, stagger: 0.05, duration: 0.5, ease: "power2.out", delay: 0.6 });
 
     setTimeout(() => {
-        window.location.href = './dashboard.html';
+        window.location.href = import.meta.env.BASE_URL + 'dashboard.html';
         submitBtn.innerText = originalText;
         submitBtn.style.opacity = "1";
         submitBtn.style.pointerEvents = "auto";
@@ -430,7 +430,7 @@ if (forgotPwdLink) {
         // We do not strictly need a full redirect URL in this exact test,
         // but adding it ensures the user comes back to our app.
         const { data, error } = await supabase.auth.resetPasswordForEmail(emailVal, {
-            redirectTo: new URL('./index.html', window.location.href).href
+            redirectTo: window.location.origin + import.meta.env.BASE_URL + 'index.html'
         });
 
         if (error) {
@@ -475,7 +475,7 @@ if (googleLoginBtn) {
         const { data, error } = await supabase.auth.signInWithOAuth({
             provider: 'google',
             options: {
-                redirectTo: new URL('./dashboard.html', window.location.href).href
+                redirectTo: window.location.origin + import.meta.env.BASE_URL + 'dashboard.html'
             }
         });
 
